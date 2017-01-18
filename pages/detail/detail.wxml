@@ -1,0 +1,83 @@
+<!--pages/detail/detail.wxml-->
+<view style="background-color: #eeeeee">
+    <view class="cover">
+        <image class="img" src="../../images/1.jpg" />
+    </view>
+    <view class="shop_info">
+        <view class="comment">
+            <view class="left">
+                <view class="stars">
+                    <image class="img_star" src="../../images/star_gray.png" />
+                    <image class="img_star" src="../../images/star_gray.png" />
+                    <image class="img_star" src="../../images/star_gray.png" />
+                    <image class="img_star" src="../../images/star_gray.png" />
+                    <image class="img_star" src="../../images/star_gray.png" />
+                    <Text style="margin-left:6rpx;color:#666;">晒资</Text>
+                    <Text style="color:#e95246">￥</Text>
+                    <Text style="color:#e95246">0</Text>
+                </view>
+                <view class="scores">
+                    <Text class="score">味道0分</Text>
+                    <Text class="score">环境0分</Text>
+                    <Text class="score">服务态度0分</Text>
+                </view>
+            </view>
+            <view class="right">
+                <Text>$0</Text>
+                <Text>位</Text>
+            </view>
+        </view>
+        <view class="contact">
+            <view class="address">
+                <image class="location" src="../../images/location.png" />
+                <Text style="margin-left:5px;float:left;width: 85%;text-overflow: ellipsis;white-space: nowrap; overflow: hidden;">光华路22号光华路soho一期临街商铺</Text>
+                <image src="../../images/forward.png" class="forward"/>
+            </view>
+            <view class="phone">
+                <image class="call" src="../../images/phone.png" />
+                <Text style="margin-left:5px;float:left;">010-65616160</Text>
+            </view>
+        </view>
+    </view>
+    <view class="items">
+       <view class="item" >
+           <image src="../../images/dish.png" style="display: block;width: 18px;height:24px;"/>
+           <Text>点菜</Text>
+       </view>
+        <view style="display:flex;padding:10px 0 9px 0;position:relative;align-items: center;justify-content: center;">
+            <view style="border-right:1px solid #e1e1e1;top:0;bottom:0;height:35px;"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/order.png" style="display: block;width: 18px;height:24px;"/>
+            <Text>订座</Text>
+        </view>
+        <view style="display:flex;padding:10px 0 9px 0;position:relative;align-items: center;justify-content: center;">
+            <view style="border-right:1px solid #e1e1e1;top:0;bottom:0;height:35px;"></view>
+        </view>
+        <view class="item">
+            <image src="../../images/camera.png" style="display: block;width: 18px;height:24px;"/>
+            <Text>我要晒</Text>
+        </view>
+    </view>
+    <view class="recommend">
+       <view class="title">
+           <image class="location" src="../../images/thumb.png" />
+           <Text style="margin-left:5px;float:left;">店家推荐</Text>
+       </view>
+        <view class="content">《
+
+                雪花牛舌、 秘制牛仔骨、精选雪花牛小排、 烤鳗鱼、黑山猪五花肉 、 特选三筋、帝王沙拉、小文秘宗烤活鳗鱼、牛小排、石锅拌饭、特制黑椒毛豆
+        </view>
+    </view>
+    <view class="shares">
+        <view class="title">
+            <image class="share" src="../../images/img.png" />
+            <Text style="margin-left:5px;float:left;width: 85%">网友晒单</Text>
+            <image src="../../images/forward.png" class="forward"/>
+        </view>
+        <view class="content">
+
+            雪花牛舌、 秘制牛仔骨、精选雪花牛小排、 烤鳗鱼、黑山猪五花肉 、 特选三筋、帝王沙拉、小文秘宗烤活鳗鱼、牛小排、石锅拌饭、特制黑椒毛豆
+        </view>
+    </view>
+</view>

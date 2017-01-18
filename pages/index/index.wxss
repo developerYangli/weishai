@@ -1,0 +1,56 @@
+.my-swiper image{
+  width: 100%;
+}
+
+.wrap{
+	display: inline-block;
+}
+.wrap-item{
+	display: inline-block;
+	width: 33%;
+	height: 2rem;
+	line-height: 2rem;
+	border-bottom: 1px solid #ddd;
+	background-color: #fff;
+	text-align: center;
+	font-size: 30rpx;
+}
+ /*不支持 :nth-child(2);*/
+.wrap-item.exp{
+	border: 1px solid #ddd;
+	border-top: 0;
+}
+
+
+/********店铺**********/
+.page__detail{
+    display: block;
+    width: 19rem;
+    margin:0 auto;
+    background-color: #eee;
+    margin-top:0.4rem;
+}
+
+.detail__title{
+    font-size:36rpx;
+    line-height: 50rpx;
+    font-weight: 400;
+    word-break:break-word;
+    width: 100%;
+    text-align: left;
+}
+.detail__relation{
+    margin-top: 60rpx;
+    padding-bottom: 30rpx;
+}
+.relation__title{
+    border-left: 6rpx solid #d81e06;
+    padding-left: 30rpx;
+    margin-bottom: 30rpx;
+}
+
+.wxParse-img{
+    width: 20rem;
+    height: 8rem;
+    display:block;
+}

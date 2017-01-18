@@ -1,0 +1,155 @@
+/* pages/detail/detail.wxss */
+.cover {
+    position: relative;
+    height: 0;
+    padding-top: 45.87%;
+    width: 100%;
+}
+.cover image {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+}
+.stars {
+    font-size: 12px;
+    line-height: 12px;
+}
+.stars image {
+    float: left;
+    height: 12px;
+    width: 12px;
+}
+.shop_info {
+    display: flex;
+    background-color: #fff;
+    flex-direction: column;
+}
+ .comment {
+    padding: 8px 0 8px 0;
+     width: 100%;
+ }
+.contact {
+    padding: 0px 15px 0px 14px;
+}
+.left {
+    float: left;
+    margin-left: 14px;
+}
+ .right {
+    float: right;
+    margin-right: 16px;
+    font-size: 15px;
+    line-height: 41px;
+}
+.scores {
+    margin-top: 8px;
+}
+.scores .score {
+    float: left;
+    margin-right: 3px;
+    padding: 0 2px 0 2px;
+    border: 1px solid #e95246;
+    border-radius: 3px;
+    color: #e95246;
+    font-size: 10px;
+    line-height: 16px;
+}
+
+.address {
+    display:flex;
+    flex-direction: row;
+    align-items: baseline;
+    width: 100%;
+    height: 33px;
+    line-height: 27px;
+    font-size: 14px;
+    color: #000;
+}
+.location {
+    float:left;
+    line-height: 28px;
+    width: 12px;
+    height: 18px;
+}
+.call {
+    float:left;
+    line-height: 28px;
+    width: 12px;
+    height: 18px;
+}
+
+.forward {
+    margin-right: 0px;
+    width: 7px;
+    height: 12px;
+}
+.phone {
+    display:flex;
+    flex-direction: row;
+    border-top: 1px solid #e1e1e1;
+    justify-conent: center;
+    align-items: baseline;
+    font-size: 14px;
+    color: #000;
+    line-height: 46px;
+}
+.items {
+
+    display:flex;
+    flex-direction: row;
+    margin-top: 8px;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 33.2%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 13px 0 9px 0;
+    font-size: 12px;
+    color: #000;
+    line-height: 24px;
+}
+.recommend {
+    background-color: #fff;
+    margin-top: 8px;
+    padding: 0 15px 0 15px;
+    display:flex;
+    flex-direction: column;
+}
+.title {
+    display:flex;
+    flex-direction: row;
+    padding-top: 1px;
+    height: 46px;
+    line-height: 45px;
+    font-size: 14px;
+    color: #000;
+    border-bottom: 1px solid #e1e1e1;
+    align-items: baseline;
+}
+ .content {
+    padding: 13px 15px 13px 21px;
+    font-size: 12px;
+    color: #000;
+    line-height: 18px;
+}
+ .shares {
+     margin-top: 8px;
+     padding: 0 15px 0 16px;
+     background: #fff;
+ }
+.share{
+    float:left;
+    line-height: 28px;
+    width: 16px;
+    height: 13px;
+}

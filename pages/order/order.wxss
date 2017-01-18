@@ -1,0 +1,207 @@
+
+.content-container {
+    display: -webkit-flex;
+    height: 100%;
+    box-sizing: border-box;
+    padding-bottom: 100rpx;
+}
+.classify-container {
+    width: 26.6%;
+    background: #efefef;
+    height: 100%;
+}
+.classify-container .classify {
+    font-size: 13px;
+    line-height: 51px;
+    padding-right: 0;
+    text-align: left;
+    padding-left: 14px;
+    border-bottom: 1px solid #b8b8b8;
+}
+.classify-container .classify.active {
+    background: #fff;
+    border-left: 4px solid #e95246;
+    border-bottom: 0;
+}
+.classify-container .classify .name {
+    display: inline-block;
+    font-size: 28rpx;
+    color: #646464;
+    line-height: 1.2;
+    text-align: left;
+    pointer-events: none;
+}
+
+.goods-container {
+    -webkit-flex: 1;
+    background: #ffffff;
+    height: 100%;
+}
+.goods-container .title {
+    padding: 20rpx 25rpx;
+    color: #646464;
+    font-size: 30rpx;
+    line-height: 30rpx;
+    background: #f7f7f7;
+}
+.goods-container .goods {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 20rpx 30rpx;
+    font-size: 36rpx;
+    line-height: 40rpx;
+    border-bottom: 1px solid #f7f7f7;
+}
+.goods-container .goods-infos {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.goods-container .goods-title {
+    display: flex;
+
+}
+.goods-container .goods-info {
+    display: flex;
+    flex-direction: row;
+
+}
+.goods-container .goods .pic {
+    float: left;
+    width: 120rpx;
+    height: 120rpx;
+    margin-right: 20rpx;
+}
+.goods-container .goods .name {
+    color: #000;
+    font-size: 30rpx;
+    line-height: 30rpx;
+}
+.goods-container .goods .sold {
+    color: #666;
+    font-size: 30rpx;
+    line-height: 22rpx;
+    margin-top: 7px;
+}
+.goods-container .goods .price {
+    color: #e95246;
+    margin-top: 12px;
+    font-size: 30rpx;
+    line-height: 20rpx;
+}
+.goods-container .goods .addCart {
+    display: flex;
+    flex: 1;
+    flex-direction: row;
+    background-color: transparent;
+    justify-content: space-around;
+    align-items: flex-end;
+    right: 6rpx;
+
+}
+.goods-container .goods .addCart image {
+    width: 30rpx;
+    height: 30rpx;
+}
+
+.cart-detail, .cart-detail .mask {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.cart-detail .mask {
+    background: rgba(0,0,0,0.7);
+}
+.cart-detail .list {
+    position: absolute;
+    left: 0;
+    bottom: 100rpx;
+    width: 100%;
+    background: #f7f7f7;
+    padding: 30rpx 0;
+}
+.cart-detail .list .item {
+    display: -webkit-flex;
+    color: #333;
+    font-size: 36rpx;
+    line-height: 50rpx;
+    padding: 20rpx 40rpx;
+}
+.cart-detail .list .item .name {
+    -webkit-flex: 1;
+}
+.cart-detail .list .item .total {
+    width: 120rpx;
+}
+.cart-detail .list .item .reduce,
+.cart-detail .list .item .add {
+    font-size: 50rpx;
+    background: #feb70f;
+    width: 50rpx;
+    height: 50rpx;
+    text-align: center;
+    border-radius: 50%;
+}
+.cart-detail .list .item .num {
+    width: 50rpx;
+    text-align: center;
+    margin: 0 5rpx;
+}
+
+.cart {
+    display: -webkit-flex;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100rpx;
+    background: #fff;
+}
+.cart .data {
+    -webkit-flex: 1;
+    /*border-top: 1rpx solid #e7e7e7;*/
+}
+.cart .data .icon {
+    position: absolute;
+    left: 40rpx;
+    top: -20rpx;
+    width: 100rpx;
+    height: 100rpx;
+    background: #feb70f;
+    border-radius: 50%;
+}
+.cart .data .icon image {
+    position: absolute;
+    left: 15rpx;
+    top: 15rpx;
+    width: 70rpx;
+    height: 70rpx;
+}
+.cart .data .icon .count {
+    position: absolute;
+    left: 70rpx;
+    top: -10rpx;
+    font-size: 30rpx;
+    line-height: 40rpx;
+    padding: 0 12rpx;
+    color: #fff;
+    background: #f45044;
+    border-radius: 20rpx;
+}
+.cart .data .total {
+    color: #f45044;
+    font-size: 36rpx;
+    line-height: 100rpx;
+    padding-left: 160rpx;
+}
+.cart button {
+    margin-top: 10rpx;
+    margin-right: 20rpx;
+    width: 200rpx;
+    height: 100%;
+    font-size: 36rpx;
+}
