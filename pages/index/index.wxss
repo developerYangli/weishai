@@ -1,6 +1,13 @@
 .my-swiper image{
   width: 100%;
 }
+.my-swiper {
+    /* height: 125px; */
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    z-index:99;
+}
 
 .wrap{
 	display: inline-block;
@@ -14,6 +21,7 @@
 	background-color: #fff;
 	text-align: center;
 	font-size: 30rpx;
+
 }
  /*不支持 :nth-child(2);*/
 .wrap-item.exp{
@@ -21,7 +29,106 @@
 	border-top: 0;
 }
 
+.head {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #fff;
+    align-items: center;
+    height: 62rpx;
+    border-bottom: 1px solid #DCDCDC;
+    width: 100%;
+    font-size: 26rpx;
+    z-index:99;
+}
+.head_sub_name {
+    display: inline-block;
+}
+.icon {
+    display: inline-block;
+    border: 4px solid transparent;
+    border-top: 4px solid #9b9b9b;
+    margin-left: 5px;
+}
+.active .head_sub_name {
+    color: #1070F2;
+}
+.active .icon {
+    border-bottom: 4px solid #1070F2;
+    border-top: 0;
+}
 
+.head_h {
+    background: #fff;
+    max-height: 350px;
+    overflow: auto;
+    position: absolute;
+    float: left;
+    width: 100%;
+    display: none;
+    font-size: 14px;
+    line-height: 42px;
+    color: #000;
+    padding-left: 15px;
+    z-index:3;
+}
+.detailtext {
+    position: relative;
+    height: 75rpx;
+    border-bottom: 1px solid #DCDCDC;
+    line-height: 75rpx;
+    background-color: #fff;
+    text-indent: 48rpx;
+}
+.chose_item {
+    color: #1070F2;
+}
+.choseImg {
+    top: 22rpx;
+    right: 30rpx;
+    padding-left: 570rpx;
+    display: inline-block;
+    width: 32rpx;
+    height: 32rpx;
+}
+.fullbg {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(1, 1, 1);
+    transition: all 2s;
+    opacity: 0;
+}
+.fullopacity {
+    opacity: .5;
+}
+@keyframes slidown {
+    from {
+        transform: translateY(-420rpx);
+    }
+    to {
+        transform: translateY(0rpx);
+    }
+}
+.slidown {
+    display: block;
+    animation: slidown .7s ease-in both;
+}
+@keyframes slidup {
+    from {
+        transform: translateY(0rpx);
+    }
+    to {
+        transform: translateY(-445rpx);
+    }
+}
+.slidup {
+    display: block;
+    animation: slidup .7s ease-in both;
+}
 /********店铺**********/
 .page__detail{
     display: block;

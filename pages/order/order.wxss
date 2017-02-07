@@ -1,4 +1,11 @@
-
+ page {
+    height: 100%;
+    overflow: hidden;
+}
+.containers {
+    height: 100%;
+    overflow: hidden;
+}
 .content-container {
     display: -webkit-flex;
     height: 100%;
@@ -168,29 +175,28 @@
 .cart .data .icon {
     position: absolute;
     left: 40rpx;
-    top: -20rpx;
+    top: 10rpx;
     width: 100rpx;
     height: 100rpx;
-    background: #feb70f;
-    border-radius: 50%;
 }
 .cart .data .icon image {
-    position: absolute;
+    position: relative;
     left: 15rpx;
     top: 15rpx;
-    width: 70rpx;
-    height: 70rpx;
+    width: 54rpx;
+    height: 54rpx;
 }
 .cart .data .icon .count {
     position: absolute;
-    left: 70rpx;
-    top: -10rpx;
-    font-size: 30rpx;
+    left: 60rpx;
+    top: 10rpx;
+    font-size: 20rpx;
     line-height: 40rpx;
     padding: 0 12rpx;
     color: #fff;
-    background: #f45044;
-    border-radius: 20rpx;
+    background: #e95246;
+    border-radius: 50%;
+    text-align: center;
 }
 .cart .data .total {
     color: #f45044;
@@ -199,8 +205,8 @@
     padding-left: 160rpx;
 }
 .cart button {
-    margin-top: 10rpx;
-    margin-right: 20rpx;
+    margin-top: 0rpx;
+    margin-right: 0rpx;
     width: 200rpx;
     height: 100%;
     font-size: 36rpx;

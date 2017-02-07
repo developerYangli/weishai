@@ -10,16 +10,39 @@
       </block>
     </swiper>
   </view>
-
     <!-- 分类导航 -->
-  <view class="nav-block wrap">
-    <block wx:for="{{navItems}}"> 
-      <view class="wrap-item {{item.isSplot ? 'exp' : ''}}">  
-        {{item.name}}
-      </view>
-    </block>
+  <view class="head">
+    <view class="head_sub {{(chose== 1 && navs) ? 'active' : ''}}" bindtap="dish_action">
+      <view class="head_sub_name">{{allDishes}}</view>
+      <view class="icon"></view>
+    </view>
+    <view class="head_sub {{(chose== 2 && navs) ? 'active' : ''}}"  bindtap="price_action">
+      <view class="head_sub_name">{{priseHigh}}</view>
+      <view class="icon"></view>
+    </view>
+    <view class="head_sub {{chose== 3 ? 'active' : ''}}"  bindtap="area_action">
+      <view class="head_sub_name">{{allArea}}</view>
+      <view class="icon"></view>
+    </view>
   </view>
-
+  <view wx:if="{{chose==1}}" class="head_h {{dishOpen ? 'slidown' : 'slidup'}}">
+    <view wx:for="{{dish}}" wx:key="" class="detailtext {{index == dishIndex ? 'chose_item' : ''}}" bindtap="dish_type" data-choseindex="{{index}}">
+      {{item}}
+      <image wx:if="{{dishIndex == index}}" class="choseImg" src="../../images/chose.png"></image>
+    </view>
+  </view>
+  <view wx:if="{{chose==2}}" class="head_h {{priceOpen ? 'slidown' : 'slidup'}}">
+    <view wx:for="{{price}}" wx:key="" class="detailtext {{index == priceIndex ? 'chose_item' : ''}}" bindtap="price_type" data-choseindex="{{index}}">
+      {{item}}
+      <image wx:if="{{priceIndex == index}}" class="choseImg" src="../../images/chose.png"></image>
+    </view>
+  </view>
+  <view wx:if="{{chose==3}}" class="head_h {{areaOpen ? 'slidown' : 'slidup'}}">
+    <view wx:for="{{area}}" wx:key="" class="detailtext {{index == areaIndex ? 'chose_item' : ''}}" bindtap="area_type" data-choseindex="{{index}}">
+      {{item}}
+      <image wx:if="{{areaIndex == index}}" class="choseImg" src="../../images/chose.png"></image>
+    </view>
+  </view>
   <!--店铺-->
   <view class="news-item-container">
     <block wx:for="{{list}}" wx:key="id">

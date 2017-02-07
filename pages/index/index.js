@@ -17,21 +17,21 @@ Page({
     duration: 1000,
     loading: false,
     plain: false,
-    navItems:[
-      {
-        name:'全部美食',
-        url:'dishes'
-      },
-      {
-        name:'晒资最高',
-        url:'take',
-        isSplot:true
-      },
-      {
-        name:'全部区域',
-        url:'out'
-      }
-    ]
+    allDishes: "全部美食",
+    priseHigh: "晒资最高",
+    allArea: "所有区域",
+    dish : [],
+    price: [],
+    area: [],
+    dishOpen : false,
+    priceOpen: false,
+    areaOpen: false,
+    chose:0,
+    dishIndex : 0,
+    priceIndex: 0,
+    areaIndex: 0,
+    navs:false,
+    isfull:false
   },
    //事件处理函数
   bindViewTap(e) {
@@ -79,15 +79,19 @@ Page({
         }
          that.setData({
            //banner: res.data.top_stories,
-           list:res.data
+           list:res.data,
+           dish : ["全部美食", "火锅", "咖啡", "烧烤"],
+           price: ["人气最高", "费用最低", "费用最高", "距离最近"],
+           area: ["全部区域", "热门商区", "朝阳门"]
          })
       },
       fail (err) {
         console.log(err);
       }
 
-    })
-    this.index = 1
+    });
+
+    this.index = 1;
     //调用应用实例的方法获取全局数据
     // app.getUserInfo(function(userInfo){
     //   //更新数据
@@ -96,5 +100,87 @@ Page({
     //   })
     // })
     
-  }
+  },
+  dish_action(e) {
+    var s;
+    if(this.data.dishOpen) {
+      s = false;
+    } else {
+      s = true;
+    }
+    this.setData({
+      chose: 1,
+      navs:s,
+      isfull:s,
+      dishOpen:!this.data.dishOpen,
+      priceOpen:false
+    });
+  },
+  price_action(e) {
+    var s;
+    if(this.data.priceOpen) {
+      s = false;
+    } else {
+      s = true;
+    }
+    this.setData({
+      chose: 2,
+      navs:s,
+      isfull:s,
+      priceOpen:!this.data.priceOpen,
+      dishOpen:false
+    });
+  },
+  type_action(e) {
+    this.setData({
+      chose: 3
+    });
+  },
+  //全部美食
+  dish_type:function (e) {
+    var dataset = e.currentTarget.dataset;
+    var s;
+    if(this.data.dishOpen) {
+      s = false;
+    } else {
+      s = true;
+    }
+    this.setData({
+      dishIndex:dataset.choseindex,
+      dishOpen:!this.data.dishOpen,
+      navs:s,
+      isfull:s,
+      allDishes:this.data.dish[dataset.choseindex]
+    });
+    //点击请求数据
+  },
+  //价格
+  price_type: function (e) {
+    var dataset = e.currentTarget.dataset;
+    console.log(dataset.choseindex);
+    var s;
+    if(this.data.propen) {
+      s = false;
+    } else {
+      s = true;
+    }
+    this.setData({
+      priceIndex:dataset.choseindex,
+      priceOpen:!this.data.priceOpen,
+      navs:s,
+      isfull:s,
+      priseHigh:this.data.pr[dataset.choseindex]
+    });
+    // var self = this;
+    // self.requestData(self);
+    // console.log(this.data.price_choseIndex);
+  },
+  hidebg () {
+    this.setData({
+      isfull:false,
+      dishOpen:false,
+      priceOpen:false,
+      navs:false
+    });
+  },
 })

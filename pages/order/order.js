@@ -2,24 +2,25 @@ var app = getApp();
 var mockData = require('../mock/order.js')
 Page({
   data: {
-    goodsList: [],
+    goodsList: {},
     good:[]
   },
   onLoad (id) {
     let that = this;
     const obj = {};
     var arr = [];
+    //console.log("wosohsdfddddddd",mockData);
     for (var i in mockData) {
         let key = i.slice(4);
       obj[key] = mockData[i];
-
-      arr.push(mockData[i]);
+      //arr.push(mockData[i]);
     }
-    console.log(arr);
+
+    //console.log("dfsafdsfsdafdsaf",obj);
     that.setData({
       goodsList:obj,
-      good: arr
     })
+    //console.log("ddddddd",obj)
     //var shopId = options.id;
     // wx.request({
     //   url: 'http://m.w-share.cn/menu.php/id=6',
@@ -38,11 +39,10 @@ Page({
     //   }
     // })
   },
-  onShow: function () {
+  onShow() {
     this.setData({
-      classifySeleted: this.data.good[0][0].category.slice(4)
+      classifySelected : Object.keys(this.data.goodsList)[0],
     });
-    console.log(this.data.good[0]);
   },
 //   tapAddCart: function (e) {
 //     this.addCart(e.target.dataset.id);
@@ -83,45 +83,53 @@ Page({
 //       followed: !this.data.followed
 //     });
 //   },
-//   onGoodsScroll: function (e) {
-//     if (e.detail.scrollTop > 10 && !this.data.scrollDown) {
-//       this.setData({
-//         scrollDown: true
-//       });
-//     } else if (e.detail.scrollTop < 10 && this.data.scrollDown) {
-//       this.setData({
-//         scrollDown: false
-//       });
-//     }
-//
-//     var scale = e.detail.scrollWidth / 570,
-//       scrollTop = e.detail.scrollTop / scale,
-//       h = 0,
-//       classifySeleted,
-//       len = this.data.goodsList.length;
-//     this.data.goodsList.forEach(function (classify, i) {
-//       var _h = 70 + classify.goods.length * (46 * 3 + 20 * 2);
-//       if (scrollTop >= h - 100 / scale) {
-//         classifySeleted = classify.id;
-//       }
-//       h += _h;
-//     });
-//     this.setData({
-//       classifySeleted: classifySeleted
-//     });
-//   },
-//   tapClassify: function (e) {
-//     var id = e.target.dataset.id;
-//     this.setData({
-//       classifyViewed: id
-//     });
-//     var self = this;
-//     setTimeout(function () {
-//       self.setData({
-//         classifySeleted: id
-//       });
-//     }, 100);
-//   },
+  onGoodsScroll(e) {
+    if (e.detail.scrollTop > 10 && !this.data.scrollDown) {
+      this.setData({
+        scrollDown: true
+      });
+    } else if (e.detail.scrollTop < 10 && this.data.scrollDown) {
+      this.setData({
+        scrollDown: false
+      });
+    }
+    var scale = e.detail.scrollWidth / 570,
+      scrollTop = e.detail.scrollTop / scale,
+      h = 0,
+      classifySelected;
+      //len = this.data.goodsList.length;
+    // this.data.goodsList.forEach((classify, i) => {
+    //   var _h = 70 + classify.goods.length * (46 * 3 + 20 * 2);
+    //   if (scrollTop >= h - 100 / scale) {
+    //     classifySeleted = classify.id;
+    //   }
+    //   h += _h;
+    // });
+    for (var key in this.data.goodsList) {
+      var list = this.data.goodsList;
+      var _h = 70 + list[key].length * 124;
+      if (scrollTop >= h - 100 / scale) {
+        classifySelected = key;
+             //console.log("listlength",list[key])
+          }
+          h += _h;
+    }
+    this.setData({
+      classifySelected: classifySelected
+    });
+  },
+  tapClassify (e) {
+    var id = e.target.dataset.id;
+    this.setData({
+      classifyViewed: id
+    });
+    var self = this;
+    setTimeout(() => {
+      self.setData({
+        classifySelected: id
+      });
+    }, 100);
+  },
 //   showCartDetail: function () {
 //     this.setData({
 //       showCartDetail: !this.data.showCartDetail

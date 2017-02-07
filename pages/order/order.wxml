@@ -1,65 +1,69 @@
-<view class="content-container">
-    <scroll-view class="classify-container" scroll-y="true">
-        <view class="classify {{classifySeleted == category ?'active':''}}" wx:for="{{goodsList}}"
-              wx:for-item="classify" wx:for-index="category" wx:key="id" data-id="{{classify.id}}"
-              bindtap="tapClassify">
-            <view class="name">{{category}}</view>
-        </view>
-    </scroll-view>
-    <scroll-view class="goods-container" scroll-y="true" scroll-into-view="{{classifyViewed}}"
-                 bindscroll="onGoodsScroll">
-        <view wx:for="{{goodsList}}" wx:for-item="classify" wx:key="id" id="{{classify.id}}" wx:for-index="category">
-            <view class="title">{{category}}</view>
-            <view class="goods" wx:for="{{classify}}" wx:for-item="id" wx:key="*this">
-                <view class="goods-image">
-                    <image class="pic" src="http://img.w-share.cn/{{id.pic}}"></image>
-                </view>
-                <view class="goods-infos">
-                    <view  class="goods-title">
-                        <Text class="name ellipsis">{{id.name}}</Text>
+<view class="containers">
+    <view class="content-container">
+        <scroll-view class="classify-container" scroll-y="true">
+            <view class="classify {{classifySelected == category ?'active':''}}" wx:for="{{goodsList}}"
+                  wx:for-item="classify" wx:for-index="category" data-id="{{category}}"
+                  bindtap="tapClassify">
+                <view class="name">{{category}}</view>
+            </view>
+        </scroll-view>
+        <scroll-view class="goods-container" scroll-y="false" scroll-into-view="{{classifyViewed}}"
+                     bindscroll="onGoodsScroll">
+            <view wx:for="{{goodsList}}" wx:for-item="classify"  id="{{category}}" wx:for-index="category">
+                <view class="title">{{category}}</view>
+                <view class="goods" wx:for="{{classify}}" wx:for-item="id" >
+                    <view class="goods-image">
+                        <image class="pic" src="http://img.w-share.cn/{{id.pic}}"></image>
                     </view>
-                    <view class="goods-info">
-                        <view style="display:flex;flex-direction: column;width: 60%">
-                            <Text class="sold">月售{{id.sales}}</Text>
-                            <Text class="price">￥{{id.price}}</Text>
+                    <view class="goods-infos" >
+                        <view  class="goods-title">
+                            <Text class="name ellipsis">{{id.name}}</Text>
                         </view>
-                        <view class="addCart" bindtap="tapAddCart" data-id="{{id}}">
-                            <view bindtap="tapMinusCart" data-id="{{id}}">
-                                <image src="../../images/btnminus.png"/>
+                        <view class="goods-info">
+                            <view style="display:flex;flex-direction: column;width: 60%">
+                                <Text class="sold">月售{{id.sales}}</Text>
+                                <Text class="price">￥{{id.price}}</Text>
                             </view>
-                            <Text style="font-size: 12px">0</Text>
-                            <view bindtap="tapAddCart" data-id="{{id}}">
-                                <image src="../../images/btnplus.png"/>
+                            <view class="addCart" bindtap="tapAddCart" data-id="{{id}}">
+                                <view bindtap="tapMinusCart" data-id="{{id}}">
+                                    <image src="../../images/btnminus.png"/>
+                                </view>
+                                <Text style="font-size: 12px">0</Text>
+                                <view bindtap="tapAddCart" data-id="{{id}}">
+                                    <image src="../../images/btnplus.png"/>
+                                </view>
                             </view>
                         </view>
                     </view>
                 </view>
             </view>
-        </view>
-    </scroll-view>
-</view>
-<view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
-    <view class="mask" bindtap="hideCartDetail"></view>
-    <view class="list">
-        <view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
-            <view class="name ellipsis">{{goods[id].name}}</view>
-            <view class="total">￥{{goods[id].price*cart.list[id]}}</view>
-            <view class="reduce" data-id="{{id}}" bindtap="tapReduceCart">-</view>
-            <view class="num">{{num}}</view>
-            <view class="add" data-id="{{id}}" bindtap="tapAddCart">+</view>
+        </scroll-view>
+    </view>
+    <view class="cart-detail" hidden="{{!showCartDetail||!cart.count}}">
+        <view class="mask" bindtap="hideCartDetail"></view>
+        <view class="list">
+            <view class="item" wx:for="{{cart.list}}" wx:for-index="id" wx:for-item="num" wx:key="id">
+                <view class="name ellipsis">{{goods[id].name}}</view>
+                <view class="total">￥{{goods[id].price*cart.list[id]}}</view>
+                <view class="reduce" data-id="{{id}}" bindtap="tapReduceCart">-</view>
+                <view class="num">{{num}}</view>
+                <view class="add" data-id="{{id}}" bindtap="tapAddCart">+</view>
+            </view>
         </view>
     </view>
-</view>
-<view class="cart">
-    <view class="data" bindtap="showCartDetail">
-        <view class="icon">
-            <image src="/imgs/shop/cart.png"></image>
-            <view class="count">{{cart.count}}</view>
+    <view class="cart">
+        <view class="data" bindtap="showCartDetail">
+            <view class="icon">
+                <image src="../../images/cart.png"></image>
+                <view class="count">1</view>
+            </view>
+            <view class="total">￥{{cart.total}}</view>
         </view>
-        <view class="total">￥{{cart.total}}</view>
+        <form bindsubmit="submit" report-submit="true">
+            <!--<view formType="submit" class="submit">去结算</view>-->
+            <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算</button>
+        </form>
     </view>
-    <form bindsubmit="submit" report-submit="true">
-        <!--<view formType="submit" class="submit">去结算</view>-->
-        <button class="yellow {{cart.count?'':'disabled'}}" formType="submit" disabled="{{!cart.count}}">去结算</button>
-    </form>
 </view>
+
+
